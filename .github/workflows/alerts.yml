@@ -1,0 +1,16 @@
+name: VulnAlerts
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: y-mehta/vulnalerts@main
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      - name: done
+        run: echo 'done'
