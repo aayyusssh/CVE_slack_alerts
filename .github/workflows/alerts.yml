@@ -7,7 +7,7 @@ on:
 
 jobs:
   alert:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: y-mehta/vulnalerts@master
